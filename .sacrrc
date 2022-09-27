@@ -1,0 +1,6 @@
+[command]
+timeout = 10080
+
+[config]
+type = config
+
