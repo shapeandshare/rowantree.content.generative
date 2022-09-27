@@ -642,6 +642,65 @@
       },
       "requirements": {},
       "reward": {}
+    },
+    {
+      "title": "Found an adventurer among the ruins",
+      "text": {
+        "1": "While scouting for supplies a local group found another person.",
+        "2": "Sounds like its been awhile since they saw a friendly face."
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {},
+      "reward": {
+        "population": 1,
+        "bone spear": 1,
+        "meatpie": 1
+      }
+    },
+    {
+      "title": "wandering merchant comes through",
+      "text": {
+        "1": "Many welcome goods, and some very strange ones."
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {},
+      "reward": {
+        "seed": 10,
+        "coal": 10,
+        "medicine": 2,
+        "energy cell": 5
+      }
+    },
+    {
+      "title": "something's wrong with the water",
+      "text": {
+        "1": "A few days ago poeple started falling sick",
+        "2": "Today people are dying."
+      },
+      "notification": {
+      },
+      "curse": {
+        "population": 3
+      },
+      "requirements": {
+        "population": 10
+      },
+      "reward": {}
+    },
+    {
+      "title": "they look they used to be people",
+      "text": {
+        "1": "At night we can here them vocalize.",
+        "2": "Its not a language anyone is familiar with."
+      },
+      "notification": {},
+      "curse": {},
+      "requirements": {},
+      "reward": {}
     }
   ]
 }
