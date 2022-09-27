@@ -38,7 +38,7 @@ def generate():
             model_tar.extractall(path=tmpdirname)
             restored_model = tf.keras.models.load_model(filepath=tmpdirname)
 
-    prompt_string = "{\n" '  "events": [\n'
+    prompt_string = "event"
 
     prompts: list[str] = [prompt_string]
     # prompts: list[str] = ["robot", "raccoon", "spider"]

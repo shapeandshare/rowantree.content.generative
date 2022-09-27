@@ -17,7 +17,7 @@ from .training.model import create_model
 def train():
     epochs = 5000
     vocab_size = 20000  # Only consider the top 20k words
-    maxlen = 256  # Max sequence size
+    maxlen = 1024  # Max sequence size
     embed_dim = 256  # Embedding size for each token
     num_heads = 2  # Number of attention heads
     feed_forward_dim = 256  # Hidden layer size in feed forward network inside transformer
