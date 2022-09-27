@@ -475,6 +475,173 @@
       "text": {},
       "curse": {},
       "notification": {}
+    },
+    {
+      "title": "some local children find a chicken in the forest",
+      "text": {},
+      "notification": {},
+      "curse": {},
+      "requirements": {
+        "population": 2
+      },
+      "reward": {
+        "meat": 1
+      }
+    },
+    {
+      "title": "lots of rain has lead to a recent explosion of mushrooms around the forst",
+      "text": {
+        "1": "Too bad the mushrooms were not ediable."
+      },
+      "notification": {
+        "1": "Poisonous mushrooms found near the forest edge"
+      },
+      "curse": {
+        "population": 1
+      },
+      "requirements": {
+        "population": 1
+      },
+      "reward": {}
+    },
+    {
+      "title": "parasitic worms infest the local population",
+      "text": {
+        "1": "The rain has made keeping fires lite difficult",
+        "2": "Some aren't willing to wait to cook here food."
+      },
+      "notification": {
+        "1": "Reports of terrible stomach pain has been common recently"
+      },
+      "curse": {
+        "population": 1
+      },
+      "requirements": {
+        "population": 2
+      },
+      "reward": {
+        "meat": 10
+      }
+    },
+    {
+      "title": "A local hunter reported seeing a deer with two heads",
+      "text": {
+        "1": "While not all mutations, live.. Those that do",
+        "2": "can cause terrible nightmares in those who find them."
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {
+        "population": 10
+      },
+      "reward": {
+        "meat": 10
+      }
+    },
+    {
+      "title": "Rummors on an old military base are heard",
+      "text": {
+        "1": "Some need refugees spoke about seeing an old military base"
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {
+      },
+      "reward": {
+        "leather armour": 10,
+        "rifle": 1,
+        "bullets": 20
+      }
+    },
+    {
+      "title": "wandering drone",
+      "text": {
+        "1": "A small buzzing drone came whirring into the clearing",
+        "2": "It hovered for a moment and then continued in the opposite direction is came from."
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {},
+      "reward": {
+        "alien alloy": 1
+      }
+    },
+    {
+      "title": "swamp lights",
+      "text": {
+        "1": "A old women who lives outside the encampment keeps talking about seeing lights at night",
+        "2": "So far no one is taking her serious."
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {},
+      "reward": {
+        "scales": 10,
+        "fur": 1
+      }
+    },
+    {
+      "title": "fire flies",
+      "text": {
+        "1": "We weather has been warmer than usual.",
+        "2": "The insects seem to have noticed as well."
+      },
+      "notification": {
+      },
+      "curse": {
+        "crops": 5,
+        "charm": 5
+      },
+      "requirements": {},
+      "reward": {}
+    },
+    {
+      "title": "snowing ash",
+      "text": {
+        "1": "It looks like snow, but its definitely ash.",
+        "2": "Its been covering everything for days now."
+      },
+      "notification": {
+      },
+      "curse": {
+        "meat": 5,
+        "cloth": 5,
+        "seed": 5,
+        "crops": 5
+      },
+      "requirements": {},
+      "reward": {}
+    },
+    {
+      "title": "static electricity",
+      "text": {
+        "1": "You can feel the static everywhere. Its lasted hours, and everyone is looking for lightening.",
+        "2": "Eventually the rains came, and the feeling went way without anything more unusual happening."
+      },
+      "notification": {
+      },
+      "curse": {},
+      "requirements": {},
+      "reward": {}
+    },
+    {
+      "title": "overflowing the banks",
+      "text": {
+        "1": "All the rain has caused local streams to overflow and the streets to become mud."
+      },
+      "notification": {
+      },
+      "curse": {
+        "cloth": 5,
+        "torch": 5,
+        "coal": 5
+      },
+      "requirements": {},
+      "reward": {}
     }
   ]
 }
