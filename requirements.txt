@@ -1,5 +1,12 @@
 jupyter
 python-dotenv
+pydantic
+
 
 # Environment specific..
 # tensorflow
+
+# Note: this requires the rust tool chain, m1 setup: https://sourabhbajaj.com/mac-setup/Rust/
+transformers
+datasets >= 1.8.0
+sentencepiece != 0.1.92

@@ -14,7 +14,7 @@ def prepare_data(batch_size, vocab_size, maxlen):
     directories: List[str] = [os.environ["SM_CHANNEL_TRAIN"]]
     for dir in directories:
         print(f"Searching {dir} to load corpus..")
-        for f in Path(dir).rglob("*"):
+        for f in Path(dir).rglob("*.txt"):
             if f.is_file():
                 filenames.append(f.resolve().as_posix())
                 print(f"Adding {f.as_posix()} to corpus.")

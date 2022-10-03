@@ -52,10 +52,17 @@ class TextGenerator:
             else:
                 x = start_tokens
             x = np.array([x])
-            y, _ = self.model.predict(x, verbose=0)  # disable logging
+            y, _ = self.model.predict(x, verbose=0)  # disable logging (ascii progress bar)
             sample_token = self.sample_from(y[0][sample_index])
             tokens_generated.append(sample_token)
             start_tokens.append(sample_token)
             num_tokens_generated = len(tokens_generated)
+
+            # At this point we stop getting any further response
+            if tokens_generated[-3:] == [0, 0, 0]:
+                # print("break condition")
+                break
+            # else:
+            #     print(tokens_generated[:-3])
         txt = " ".join([self.detokenize(_) for _ in self.start_tokens + tokens_generated])
         return txt
