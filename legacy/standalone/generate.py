@@ -12,8 +12,8 @@ from pathlib import Path
 
 import tensorflow as tf
 
-from src.standalone.common import prepare_data
-from src.standalone.predict import TextGenerator
+from legacy.standalone.common import prepare_data
+from legacy.standalone.predict import TextGenerator
 
 
 def generate():
@@ -33,7 +33,7 @@ def generate():
     for index, word in enumerate(vocab):
         word_to_index[word] = index
 
-    model_filepath: str = (Path("..") / "models" / "trt" / "model.tar.gz").resolve().as_posix()
+    model_filepath: str = (Path("../../src") / "models" / "trt" / "model.tar.gz").resolve().as_posix()
     with tarfile.open(name=model_filepath, mode="r:*") as model_tar:
         with tempfile.TemporaryDirectory() as tmpdirname:
             model_tar.extractall(path=tmpdirname)

@@ -1,0 +1,87 @@
+{% load static %}
+{% block content %}
+<div>
+    <form action="" method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+
+        <table style="display: none">
+            {{ view.formset.empty_form }}
+        </table>
+
+        <table>
+            {{ view.formset }}
+        </table>
+
+        <span id="add-form" class="button">Add form</span>
+
+        <input type="submit" />
+    </form>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script type="text/javascript" src="{% static 'admin/js/vendor/jquery/jquery.js' %}"></script>
+{% endblock %}
+
+{{ form.media }}
+
+<script>
+(function($) {
+    $('#id_title').on('input',function(e){
+    // alert('Changed!')
+    //     $('#id_text').text("josh was here")
+        $('#id_title').val("josh was here")
+    })
+    $('#id_text').on('input',function(e){
+    // alert('Changed!')
+    //     $('#id_text').text("josh was here")
+    })
+
+    // $('#add-form').click(function() {
+    //     var index = $('#id_inline_test_models-TOTAL_FORMS').val()
+    //     var newTable = $('#id_inline_test_models-__prefix__-DELETE').parents('table').clone()
+    //     newTable.find(':input').each(function() {
+    //         for (attr of ['name', 'id'])
+    //             $(this).attr(
+    //                 attr,
+    //                 $(this).attr(attr).replace('__prefix__', index)
+    //             )
+    //     })
+    //     newTable.insertBefore($(this))
+    //     $('#id_inline_test_models-TOTAL_FORMS').val(
+    //         parseInt($('#id_inline_test_models-TOTAL_FORMS').val()) + 1
+    //     )
+    //     newTable.slideDown()
+    // })
+})($)
+</script>
+
+<!--<script>-->
+<!--(function($) {-->
+<!--    $('#add-form').click(function() {-->
+<!--        var index = $('#id_inline_test_models-TOTAL_FORMS').val()-->
+<!--        var newTable = $('#id_inline_test_models-__prefix__-DELETE').parents('table').clone()-->
+<!--        newTable.find(':input').each(function() {-->
+<!--            for (attr of ['name', 'id'])-->
+<!--                $(this).attr(-->
+<!--                    attr,-->
+<!--                    $(this).attr(attr).replace('__prefix__', index)-->
+<!--                )-->
+<!--        })-->
+<!--        newTable.insertBefore($(this))-->
+<!--        $('#id_inline_test_models-TOTAL_FORMS').val(-->
+<!--            parseInt($('#id_inline_test_models-TOTAL_FORMS').val()) + 1-->
+<!--        )-->
+<!--        newTable.slideDown()-->
+<!--    })-->
+<!--})($)-->
+<!--</script>-->
+
+
+
+<!--<form method="post">{% csrf_token %}-->
+<!--    {{ form.as_p }}-->
+<!--    <input type="submit" value="Save">-->
+<!--</form>-->
+

@@ -10,8 +10,8 @@ import os
 
 import tensorflow as tf
 
-from src.standalone.common import prepare_data
-from src.standalone.training.model import create_model
+from legacy.standalone.common import prepare_data
+from legacy.standalone.training.model import create_model
 
 
 def train():
