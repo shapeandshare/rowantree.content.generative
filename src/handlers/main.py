@@ -9,9 +9,9 @@ from starlette import status
 from starlette.exceptions import HTTPException
 from starlette.middleware.cors import CORSMiddleware
 
+from src.contracts.dtos.type_a_head_request import TypeAHeadRequest
+from src.contracts.dtos.type_a_head_response import TypeAHeadResponse
 from src.controllers.type_a_head import TypeAHeadController
-from src.models.type_a_head_request import TypeAHeadRequest
-from src.models.type_a_head_response import TypeAHeadResponse
 from src.services.text import TextService
 
 text_service: TextService = TextService()

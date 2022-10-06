@@ -1,7 +1,7 @@
+from src.contracts.dtos.generation_parameters import GenerationParameters
+from src.contracts.dtos.type_a_head_request import TypeAHeadRequest
+from src.contracts.dtos.type_a_head_response import TypeAHeadResponse
 from src.controllers.abstract_controller import AbstractController
-from src.models.generation_parameters import GenerationParameters
-from src.models.type_a_head_request import TypeAHeadRequest
-from src.models.type_a_head_response import TypeAHeadResponse
 from src.services.text import TextService
 
 

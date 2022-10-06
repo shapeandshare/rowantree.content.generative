@@ -2,7 +2,7 @@
 from abc import abstractmethod
 from typing import Any, Optional
 
-from src.models.base_model import BaseModel
+from src.contracts.dtos.base_model import BaseModel
 
 
 class AbstractController(BaseModel):

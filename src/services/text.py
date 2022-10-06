@@ -4,8 +4,8 @@ from typing import Optional
 import pandas as pd
 from transformers import Pipeline, pipeline
 
-from src.models.generation_parameters import GenerationParameters
-from src.models.line_score import LineScore
+from src.contracts.dtos.generation_parameters import GenerationParameters
+from src.contracts.dtos.line_score import LineScore
 
 
 class TextService:
