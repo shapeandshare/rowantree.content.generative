@@ -25,7 +25,7 @@ class EventTitleAutocomplete(autocomplete.Select2ListView):
         if response.status_code != status.HTTP_200_OK:
             return []
 
-        return response.json()["results"]
+        return response.json()["result"]
 
 
 class EventTextAutocomplete(autocomplete.Select2ListView):
@@ -44,7 +44,7 @@ class EventTextAutocomplete(autocomplete.Select2ListView):
         if response.status_code != status.HTTP_200_OK:
             return []
 
-        return response.json()["results"]
+        return response.json()["result"]
 
 
 class IndexView(generic.CreateView):

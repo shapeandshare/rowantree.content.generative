@@ -1,11 +1,13 @@
 from math import floor
-from typing import Optional
 
 import pandas as pd
 from transformers import Pipeline, pipeline, set_seed
 
-from src.contracts.dtos.generation_parameters import GenerationParameters
 from src.contracts.dtos.line_score import LineScore
+from src.contracts.dtos.parameter.data import DataParameter
+from src.contracts.dtos.parameter.filter import FilterParameter
+from src.contracts.dtos.parameter.generation import GenerationParameter
+from src.contracts.dtos.request.type_a_head import TypeAHeadRequest
 from src.contracts.filter_type import FilterType
 
 
@@ -14,34 +16,32 @@ class TextService:
 
     def __init__(self):
         self.generator = pipeline("text-generation", model="gpt2")
-        # set_seed()
 
-    def execute(self, prompt: str, params: Optional[GenerationParameters] = None) -> list[str]:
-        print(prompt)
-        if params is None:
-            params = GenerationParameters()
-        print(params.json(by_alias=True))
+    def execute(self, request: TypeAHeadRequest) -> list[str]:
+        set_seed(request.generation.seed)
+        results: list[str] = self.generate(data=request.data, params=request.generation)
+        return TextService.post_process(results=results, params=request.filter)
 
+    def generate(self, data: DataParameter, params: GenerationParameter) -> list[str]:
         results: list[str] = []
 
         for i in range(params.epochs):
-            max_length: int = floor(((i + 1) / params.epochs) * params.max_length) + len(prompt)
+            max_length: int = floor(((i + 1) / params.epochs) * params.max_length) + len(data.text)
 
             predictions: list[dict[str, str]] = self.generator(
-                prompt, max_length=max_length, num_return_sequences=params.num_responses
+                data.text, max_length=max_length, num_return_sequences=params.num_responses
             )
             print(predictions)
             new_results: list[str] = [prediction["generated_text"] for prediction in predictions]
             results += new_results
-
-        return TextService.post_process(results=results, quantile=params.quantile, filters=params.filters)
+        return results
 
     @staticmethod
-    def post_process(results: list[str], quantile: float, filters: list[FilterType]):
+    def post_process(results: list[str], params: FilterParameter):
         score_df: pd.DataFrame = TextService.build_report(results=results)
-        mean_quantile = score_df.loc[:, ~score_df.columns.isin(["text"])].quantile(quantile)
+        mean_quantile = score_df.loc[:, ~score_df.columns.isin(["text"])].quantile(params.quantile)
         filtered_df: pd.DataFrame = TextService.filter(
-            results_df=score_df, mean_quantile=mean_quantile, filters=filters
+            results_df=score_df, mean_quantile=mean_quantile, filters=params.filters
         )
         return filtered_df["text"].tolist()
 
