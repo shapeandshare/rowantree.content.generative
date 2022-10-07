@@ -1,8 +1,7 @@
-import secrets
 from math import floor
 
 import pandas as pd
-from transformers import Pipeline, pipeline, set_seed
+from transformers import Pipeline, pipeline
 
 from src.contracts.dtos.line_score import LineScore
 from src.contracts.dtos.parameter.data import DataParameter
