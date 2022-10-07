@@ -1,3 +1,4 @@
+import secrets
 from math import floor
 
 import pandas as pd
@@ -18,7 +19,6 @@ class TextService:
         self.generator = pipeline("text-generation", model="gpt2")
 
     def execute(self, request: TypeAHeadRequest) -> list[str]:
-        set_seed(request.generation.seed)
         results: list[str] = self.generate(data=request.data, params=request.generation)
         return TextService.post_process(results=results, params=request.filter)
 
