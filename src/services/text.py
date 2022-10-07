@@ -20,7 +20,9 @@ class TextService:
 
     def execute(self, request: TypeAHeadRequest) -> list[str]:
         results: list[str] = self.generate(data=request.data, params=request.generation)
-        return TextService.post_process(results=results, params=request.filter)
+        if len(request.filter.filters) > 0:
+            return TextService.post_process(results=results, params=request.filter)
+        return results
 
     def generate(self, data: DataParameter, params: GenerationParameter) -> list[str]:
         results: list[str] = []
